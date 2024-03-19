@@ -28,6 +28,7 @@ document.querySelector('#uip-file').addEventListener('change', (event) => {
                 //     // 디테일 폼이 있는 경우
                 // }
                 if (el.querySelector('.table-list')) {
+                    console.log('table', '있음')
                     // 조회 그리드가 있는 경우
                     gridObj = listTableObjectCreate(el)
                     createListGridDOM(gridObj)
@@ -259,6 +260,7 @@ function listTableObjectCreate(el) {
     const tableBody = tableList.querySelector('tbody')
     const tableHead = tableBody.querySelectorAll('tr')[0]
     const tableCol = tableHead.querySelectorAll('td')
+    console.log('tableCol', tableCol)
 
     let gridDetail = {
         title: el.querySelector('h3') ? el.querySelector('h3').textContent : ''
@@ -278,7 +280,7 @@ function listTableObjectCreate(el) {
             const span = td.querySelector('span')
             if (span.textContent !== '') {
                 colDef.field = span.id
-                colDef.headerName = span.textContent
+                colDef.headerName = span.getAttribute('data-name')
                 colDef.type = 'string'
                 gridColumnsDetail.push(colDef)
             }
@@ -304,6 +306,8 @@ function listTableObjectCreate(el) {
         idx++
     })
     gridDetail.rows = gridColumnsDetail
+
+    console.log('gridDetail', gridDetail)
     return gridDetail
 }
 
