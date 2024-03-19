@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+	<title>UIP TEST</title>
+	<!-- Include all css -->
+	<link rel="stylesheet" type="text/css" href="../addon/normalize/5.0.0/normalize.css">
+	<link rel="stylesheet" type="text/css" href="../addon/bootstrap/3.3.7/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="../addon/select2/4.0.3/css/select2.min.css" />
+	<link rel="stylesheet" type="text/css" href="../addon/daterangepicker/2.1.24/css/daterangepicker.css" />
+	<link rel="stylesheet" type="text/css" href="../addon/font-awesome/4.7.0/css/font-awesome.min.css" />
+	<link rel="stylesheet" type="text/css" href="../eap/css/LGCNS_style_common.css" />
+	<link rel="stylesheet" type="text/css" href="../eap/css/LGCNS_style_content.css" />
+	<link rel="stylesheet" type="text/css" href="../eap/css/uip.css" />
+	<link rel="stylesheet" type="text/css" href="../assets/accordion/1.0.0/css/accordion.css" />
+	<!-- HTML5 shim for IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+	<script type="text/javascript" src="../../addon/html5shiv-master/3.7.3/js/html5shiv.min.js"></script>
+	<script type="text/javascript" src="../../addon/html5shiv-master/3.7.3/js/html5shiv-printshiv.min.js"></script>
+	<![endif]-->
+</head>
+<body id="page-container" style="overflow:auto; width:1024px;">
+<!-- wrapper start -->
+<div id="wrapper">
+	<!-- page-header start -->
+
+	<!-- //page-header end -->
+	<!-- page-content start -->
+	<section class="page-content">
+		<div class="module-wrapper">
+			<div class="module-header ">
+				<ul class="list-inline pull-left">
+					<h3 id="label1" data-name="label1" class="">Form Name</h3>
+				</ul>
+				<ul class="list-inline pull-right">
+				</ul>
+			</div>
+			<article id="searchArea" class="page-search ">
+				<div>
+					<table id="searchArea" class="">
+						<caption>area</caption>
+						<colgroup>
+							<col width="168.0px">
+							<col width="168.0px">
+							<col width="168.0px">
+							<col width="168.0px">
+							<col width="168.0px">
+							<col width="168.0px">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th class="txt-right" style="height:35px;">
+									<span id="label" data-name="var1" class="">var1</span>
+								</th>
+								<td class="txt-left" style="">
+									<input type="text" id="var1" name="var1" class="form-control" style="width:80px;" value="">
+								</td>
+								<th class="txt-right" style="height:35px;">
+									<span id="label2" data-name="var2" class="">var2</span>
+								</th>
+								<td class="txt-left" style="">
+									<input type="text" id="var2" name="var2" class="form-control" style="width:80px;" value="">
+								</td>
+								<th class="txt-right" style="height:35px;">
+									<span id="label3" data-name="var3" class="">var3</span>
+								</th>
+								<td class="txt-left" style="">
+									<input type="text" id="var3" name="var3" class="form-control" style="width:80px;" value="">
+								</td>
+							</tr>
+							<tr>
+								<th class="txt-right" style="height:35px;">
+									<span id="label4" data-name="var4" class="">var4</span>
+								</th>
+								<td class="txt-left" style="">
+									<select id="var4" name="var4" class="form-control imgArrow" style="width:80px;">
+										<option selected="selected">전체</option>
+									</select>
+								</td>
+								<th class="txt-right" style="height:35px;">
+									<span id="label5" data-name="var5" class="">var5</span>
+								</th>
+								<td class="txt-left" style="">
+									<div class="input-checkbox" id="var5">
+										<label><input type="checkbox" id="checkboxitem1" name="var5" class="form-control" value="체크"><span>체크</span></label>
+									</div>
+								</td>
+								<th class="txt-right" style="height:35px;">
+									<span id="label6" data-name="var6" class="">var6</span>
+								</th>
+								<td class="txt-left" style="">
+									<div class="datepicker datepicker-single">
+										<i></i>
+										<input type="text" id="var6" name="var6" class="form-control" style="width:102px;" value="">
+									</div>
+								</td>
+							</tr>
+						</tbody>					</table>
+					</div>
+					<ul class="list-inline">
+						<li>
+							<button id="button1" name="초기화" class="btn btn-default" onclick="return false;" style="width:63px;"><span>초기화</span></button>
+						</li>
+						<li>
+							<button id="button" name="조회" class="btn btn-default" onclick="return false;" style="width:63px;"><span>조회</span></button>
+						</li>
+					</ul>
+				</article>
+			</div>
+
+			<div class="module-wrapper">
+				<div class="module-header ">
+					<ul class="list-inline pull-left">
+						<h3 id="Title" data-name="Title" class="">Title</h3>
+					</ul>
+					<ul class="list-inline pull-right">
+					</ul>
+				</div>
+				<div style="position:relative;margin-bottom:60px;">
+					<table id="listArea" class="table-list ">
+						<caption>area</caption>
+						<colgroup>
+							<col width="60.0px">
+							<col width="157.0px">
+							<col width="157.0px">
+							<col width="157.0px">
+							<col width="157.0px">
+							<col width="157.0px">
+							<col width="161.0px">
+						</colgroup>
+						<thead>
+							<tr>
+								<th style="text-align: center; height:30px;" class="">
+									<span id="label7" data-name="Select" class="">Select</span>
+								</th>
+								<th style="text-align: center; height:30px;" class="">
+									<span id="label8" data-name="var1" class="">var1</span>
+								</th>
+								<th style="text-align: center; height:30px;" class="">
+									<span id="label9" data-name="var2" class="">var2</span>
+								</th>
+								<th style="text-align: center; height:30px;" class="">
+									<span id="label10" data-name="var3" class="">var3</span>
+								</th>
+								<th style="text-align: center; height:30px;" class="">
+									<span id="label11" data-name="var4" class="">var4</span>
+								</th>
+								<th style="text-align: center; height:30px;" class="">
+									<span id="label12" data-name="var5" class="">var5</span>
+								</th>
+								<th style="text-align: center; height:30px;" class="">
+									<span id="label13" data-name="var6" class="">var6</span>
+								</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="txt-center" style="">
+									<div class="input-checkbox" id="chk">
+										<label><input type="checkbox" id="checkboxitem2" name="chk" class="form-control" value="checkbox"><span style="height:20px;"></span></label>
+									</div>
+								</td>
+								<td class="txt-center" style="">
+									<span id="var7" data-name="var1" class="">Default</span>
+								</td>
+								<td class="txt-center" style="">
+									<span id="var8" data-name="var2" class="">Default</span>
+								</td>
+								<td class="txt-center" style="">
+									<span id="var9" data-name="var3" class="">Default</span>
+								</td>
+								<td class="txt-center" style="">
+									<span id="var10" data-name="var4" class="">Default</span>
+								</td>
+								<td class="txt-center" style="">
+									<span id="var11" data-name="var5" class="">Default</span>
+								</td>
+								<td class="txt-center" style="">
+									<span id="var12" data-name="var6" class="">Default</span>
+								</td>
+							</tr>
+							<tr>
+								<td class="txt-center" style="">
+									<div class="input-checkbox" id="chk1">
+										<label><input type="checkbox" id="checkboxitem3" name="chk1" class="form-control" value="checkbox"><span style="height:20px;"></span></label>
+									</div>
+								</td>
+								<td class="txt-center" style="">
+									<span id="var13" data-name="var11" class="">Default</span>
+								</td>
+								<td class="txt-center" style="">
+									<span id="var14" data-name="var21" class="">Default</span>
+								</td>
+								<td class="txt-center" style="">
+									<span id="var15" data-name="var31" class="">Default</span>
+								</td>
+								<td class="txt-center" style="">
+									<span id="var16" data-name="var41" class="">Default</span>
+								</td>
+								<td class="txt-center" style="">
+									<span id="var17" data-name="var51" class="">Default</span>
+								</td>
+								<td class="txt-center" style="">
+									<span id="var18" data-name="var61" class="">Default</span>
+								</td>
+							</tr>
+							<tr>
+								<td class="txt-center" style="">
+									<div class="input-checkbox" id="chk2">
+										<label><input type="checkbox" id="checkboxitem4" name="chk2" class="form-control" value="checkbox"><span style="height:20px;"></span></label>
+									</div>
+								</td>
+								<td class="txt-center" style="">
+									<span id="var19" data-name="var12" class="">Default</span>
+								</td>
+								<td class="txt-center" style="">
+									<span id="var20" data-name="var22" class="">Default</span>
+								</td>
+								<td class="txt-center" style="">
+									<span id="var21" data-name="var32" class="">Default</span>
+								</td>
+								<td class="txt-center" style="">
+									<span id="var22" data-name="var42" class="">Default</span>
+								</td>
+								<td class="txt-center" style="">
+									<span id="var23" data-name="var52" class="">Default</span>
+								</td>
+								<td class="txt-center" style="">
+									<span id="var24" data-name="var62" class="">Default</span>
+								</td>
+							</tr>
+							<tr>
+								<td class="txt-center" style="">
+									<div class="input-checkbox" id="chk3">
+										<label><input type="checkbox" id="checkboxitem5" name="chk3" class="form-control" value="checkbox"><span style="height:20px;"></span></label>
+									</div>
+								</td>
+								<td class="txt-center" style="">
+									<span id="var25" data-name="var13" class="">Default</span>
+								</td>
+								<td class="txt-center" style="">
+									<span id="var26" data-name="var23" class="">Default</span>
+								</td>
+								<td class="txt-center" style="">
+									<span id="var27" data-name="var33" class="">Default</span>
+								</td>
+								<td class="txt-center" style="">
+									<span id="var28" data-name="var43" class="">Default</span>
+								</td>
+								<td class="txt-center" style="">
+									<span id="var29" data-name="var53" class="">Default</span>
+								</td>
+								<td class="txt-center" style="">
+									<span id="var30" data-name="var63" class="">Default</span>
+								</td>
+							</tr>
+							<tr>
+								<td class="txt-center" style="">
+									<div class="input-checkbox" id="chk4">
+										<label><input type="checkbox" id="checkboxitem6" name="chk4" class="form-control" value="checkbox"><span style="height:20px;"></span></label>
+									</div>
+								</td>
+								<td class="txt-center" style="">
+									<span id="var31" data-name="var14" class="">Default</span>
+								</td>
+								<td class="txt-center" style="">
+									<span id="var32" data-name="var24" class="">Default</span>
+								</td>
+								<td class="txt-center" style="">
+									<span id="var33" data-name="var34" class="">Default</span>
+								</td>
+								<td class="txt-center" style="">
+									<span id="var34" data-name="var44" class="">Default</span>
+								</td>
+								<td class="txt-center" style="">
+									<span id="var35" data-name="var54" class="">Default</span>
+								</td>
+								<td class="txt-center" style="">
+									<span id="var36" data-name="var64" class="">Default</span>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<div class="paging">
+						<ul>
+							<li><a href="#"><img src="../images/icon/arrow_double_left.png" alt=""></a></li>
+							<li class="pageBtn"><a href="#"><img src="../images/icon/arrow_left.png" alt=""></a></li>
+							<li class="pageNum current"><span><a href="#">1</a></span></li>
+							<li class="pageNum"><span><a href="#">2</a></span></li>
+							<li class="pageNum"><span><a href="#">3</a></span></li>
+							<li class="pageNum"><span><a href="#">4</a></span></li>
+							<li class="pageNum"><span><a href="#">5</a></span></li>
+							<li class="pageNum"><span><a href="#">6</a></span></li>
+							<li class="pageNum"><span><a href="#">7</a></span></li>
+							<li class="pageNum lastPage"><span><a href="#">8</a></span></li>
+							<li><a href="#"><img src="../images/icon/arrow_right.png" alt=""></a></li>
+							<li><a href="#"><img src="../images/icon/arrow_double_right.png" alt=""></a></li>
+						</ul>
+					</div>	
+				</div>
+			</div>
+		</section>
+		<!-- //page-content end -->
+	</div>
+	<!-- //wrapper end -->
+	<!-- modal start -->
+	<!-- //modal end -->
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="../addon/jquery/3.1.1/js/jquery-3.1.1.min.js"></script>
+	<script src="../addon/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="../addon/dropzone/4.0/js/dropzone.js"></script>
+	<script src="../eap/js/dropzone_override.js"></script>
+	<script src="../addon/select2/4.0.3/js/select2.min.js"></script>
+	<script src="../addon/moment/2.17.0/moment.min.js"></script>
+	<script src="../addon/daterangepicker/2.1.24/js/daterangepicker.js"></script>
+	<script src="../js/daterangepicker_override.js"></script>
+	<script src="../eap/js/LGCNS_js_common.js"></script>
+	<script src="../addon/capture/es6-promise.auto.min.js"></script>
+	<script src="../addon/capture/html2canvas.min.js"></script>
+	<script src="../js/jquery.validate-1.19.1.min.js"></script>
+	<script>
+	$(function() {
+
+		$.validator.addMethod('pattern', function(value, element, param) {
+			var pattern = $(element).attr('pattern');
+
+			if (!pattern) {
+				return true;
+			}
+			if( value=="" ) return true;
+
+			return value.match(pattern);
+		});
+
+		$.validator.addMethod('min', function(value, element, param) {
+			var minVal = $(element).attr('min');
+			var nVal = value;
+
+			if( nVal == "" ) return true;
+		
+			if ($(element).attr("type") == "date") {
+				nVal=value.replace(/[^0-9]/g,'');
+			} 
+			if( parseInt(nVal) >= parseInt(minVal) ) return true;
+			return false;
+		});
+
+		$.validator.addMethod('max', function(value, element, param) {
+			var maxVal = $(element).attr('max');
+			var nVal = value;
+
+			if( nVal == "" ) return true;
+		
+			if ($(element).attr("type") == "date") {
+				nVal=value.replace(/[^0-9]/g,'');
+			} 
+			if( parseInt(nVal) <= parseInt(maxVal) ) return true;
+			return false;
+		});
+
+		$.extend($.validator.messages, {
+			required: "This is required."
+			, email: "Wrong E-Mail."
+			, url: "Wrong URL."
+			, date: "Wrong date."
+			, number: "Wrong number."
+			, maxlength: $.validator.format("Max length is {0}.")
+			, pattern: "Please enter according to the format."
+		});
+
+		$.validator.setDefaults({
+			onkeyup: false,
+			onclick: false,
+			onfocusout: false,
+			showErrors: function(errorMap,errorList){
+				if(this.numberOfInvalids()){ // 에러가 있으면
+					alert(errorList[0].message); // 경고창으로 띄움
+				}
+			}
+		});
+
+
+		// for ie Array.prototype.includes
+		if (!Array.prototype.includes) {
+			Array.prototype.includes = function() {
+				'use strict';
+				return Array.prototype.indexOf.apply(this, arguments) !== -1;
+			};
+		}
+
+		var cnsdates = [
+			'2016.12.07', '2016.12.20', '2016.12.21', '2017.01.25'
+		];
+
+		var dateFormat = 'YYYY-MM-DD';
+
+		function isCnsDate(date) {
+			if (cnsdates.includes(date.format(dateFormat))) {
+				return ['holiday'];
+			}
+
+			// 12일간 시스템을 닫는 등 그런 예로 못고르게 할 때
+			var dif = date.diff('20170101', 'days');
+			if (0 <= dif && dif < 12) {
+				return ['disabled'];
+			}
+		}
+
+		var drpLocale = {
+			format: dateFormat,
+			monthFormat: 'YYYY-MM',
+			separator: ' ~ ',
+			applyLabel: '확인',
+			cancelLabel: '취소',
+			customRangeLabel: "직접 입력",
+			daysOfWeek: ['일', '월', '화', '수', '목', '금', '토'],
+			monthNames: ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12']
+		};
+
+		var var6Date = $('#var6');
+
+		var6Date.daterangepicker({
+			autoUpdateInput: false,
+			singleDatePicker: true,
+			isCustomDate: isCnsDate,
+			locale: drpLocale
+		});
+
+		var6Date.on('apply.daterangepicker', function(ev, picker) {
+			$(this).val(picker.startDate.format('YYYY-MM-DD'));
+		});
+
+		var6Date.on('cancel.daterangepicker', function(ev, picker) {
+			$(this).val('');
+		});
+
+
+		$('.shuttle-button').each(function() {
+			var sleft = $(this).prev('.shuttle-left').height();
+			var jtree = $(this).prev('.shuttle-left').find('.jstree').outerHeight(true);
+			var slist = $(this).prev('.shuttle-left').find('.shuttle-list').outerHeight(true);
+			var table = $(this).prev('.shuttle-left').find('table').outerHeight(true);
+			var bblock = $(this).prev('.shuttle-left').find('.btn-block').outerHeight(true);
+			var bblock = (bblock === undefined) ? 0 : bblock;
+			$(this).css('height', jtree);
+			$(this).css('margin-top', sleft - jtree - bblock);
+			$(this).css('height', slist);
+			$(this).css('margin-top', sleft - slist - bblock);
+			$(this).css('height', table);
+			$(this).css('margin-top', sleft - table - bblock);
+		});
+
+		var tab = $('.accordion > li > span'), info = $('.currsec');
+
+		var current = -1;
+		tab.click(function(e){
+			var t = e.currentTarget;
+			var current = tab.index(t);
+			if( $(t).parent().attr('class') != undefined && $(t).parent().attr('class').indexOf("on") > -1 ) {
+				$(t).parent().removeClass('on');		
+				info.eq(current).hide();
+			} else {
+				$(t).parent().addClass('on');		
+				info.eq(current).fadeIn();
+			}
+		});
+$('a[data-toggle="tab"]').on('shown.bs.tab', function(e) {
+	$('.shuttle-button').each(function() {
+			var sleft = $(this).prev('.shuttle-left').height();
+			var jtree = $(this).prev('.shuttle-left').find('.jstree').outerHeight(true);
+			var slist = $(this).prev('.shuttle-left').find('.shuttle-list').outerHeight(true);
+			var table = $(this).prev('.shuttle-left').find('table').outerHeight(true);
+			var bblock = $(this).prev('.shuttle-left').find('.btn-block').outerHeight(true);
+			var bblock = (bblock === undefined) ? 0 : bblock;
+			$(this).css('height', jtree);
+			$(this).css('margin-top', sleft - jtree - bblock);
+			$(this).css('height', slist);
+			$(this).css('margin-top', sleft - slist - bblock);
+			$(this).css('height', table);
+			$(this).css('margin-top', sleft - table - bblock);
+		});
+});
+		/*******************************************************************************
+		* Event명 : Page Loading
+		* Event기능설명 : 
+		* Event종류 : onload
+		* Input Data :  
+		* Output Data : 
+		* URI : 
+		* Control ID : 
+		*******************************************************************************/
+
+	});
+function captureImage(dialogId) {
+	if( dialogId == undefined ) {
+		html2canvas($('body')[0]).then(function(canvas) {	      
+		    if (navigator.msSaveBlob) {
+				javaFunction(canvas.toDataURL());
+		    } 
+		});		
+	} else {
+		var newId = dialogId+"_next";
+		html2canvas($(newId)[0]).then(function(canvas) {	      
+		    if (navigator.msSaveBlob) {
+				javaFunction(canvas.toDataURL());
+		    } 
+		});	
+	}
+}
+	</script>
+</body>
+</html>

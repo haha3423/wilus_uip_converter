@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>userRevision</title>
+    <!-- Include all css -->
+    <link rel="stylesheet" type="text/css" href="../addon/normalize/5.0.0/normalize.css">
+    <link rel="stylesheet" type="text/css" href="../addon/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../addon/select2/4.0.3/css/select2.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../addon/daterangepicker/2.1.24/css/daterangepicker.css"/>
+    <link rel="stylesheet" type="text/css" href="../addon/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../eap/css/LGCNS_style_common.css"/>
+    <link rel="stylesheet" type="text/css" href="../eap/css/LGCNS_style_content.css"/>
+    <link rel="stylesheet" type="text/css" href="../eap/css/uip.css"/>
+    <link rel="stylesheet" type="text/css" href="../assets/accordion/1.0.0/css/accordion.css"/>
+    <!-- HTML5 shim for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="../../addon/html5shiv-master/3.7.3/js/html5shiv.min.js"></script>
+    <script type="text/javascript" src="../../addon/html5shiv-master/3.7.3/js/html5shiv-printshiv.min.js"></script>
+    <![endif]-->
+</head>
+<body id="page-container" style="overflow:auto; width:1024px;">
+<!-- wrapper start -->
+<div id="wrapper">
+    <!-- page-header start -->
+
+
+    <!-- //page-header end -->
+    <!-- page-content start -->
+    <section class="page-content">
+        <div class="module-wrapper">
+            <div class="module-header ">
+                <ul class="list-inline pull-left">
+                    <h3 id="검색조건" data-name="검색조건" class="">검색조건</h3>
+                </ul>
+                <ul class="list-inline pull-right">
+                </ul>
+            </div>
+            <article id="searchArea" class="page-search ">
+                <div>
+                    <table id="searchArea" class="">
+                        <caption>area</caption>
+                        <colgroup>
+                            <col width="252.0px">
+                            <col width="252.0px">
+                            <col width="252.0px">
+                            <col width="252.0px">
+                        </colgroup>
+                        <tbody>
+                        <tr>
+                            <th class="txt-right" style="height:30px;">
+                                <span id="label" data-name="회사명" class="">회사명</span>
+                            </th>
+                            <td class="txt-left" style="">
+                                <input type="text" id="회사명" name="회사명" class="form-control" style="width:80px;"
+                                       value="">
+                            </td>
+                            <th class="txt-right" style="height:30px;">
+                                <span id="label1" data-name="직군" class="">직군</span>
+                            </th>
+                            <td class="txt-left" style="">
+                                <select id="직군1" name="직군" class="form-control imgArrow" style="width:80px;">
+                                    <option selected="selected">전체</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="txt-right" style="height:30px;">
+                                <span id="label2" data-name="근무지" class="">근무지</span>
+                            </th>
+                            <td class="txt-left" style="">
+                                <select id="근무지1" name="근무지" class="form-control imgArrow" style="width:80px;">
+                                    <option selected="selected">서울</option>
+                                    <option>부산</option>
+                                    <option>대전</option>
+                                    <option>대구</option>
+                                </select>
+                            </td>
+                            <th class="txt-right" style="height:30px;">
+                                <span id="label3" data-name="지원구분" class="">지원구분</span>
+                            </th>
+                            <td class="txt-left" style="">
+                                <input type="text" id="지원구분" name="지원구분" class="form-control" style="width:80px;"
+                                       value="">
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <ul class="list-inline">
+                    <li>
+                        <button id="buttonSearch" name="검색" class="btn btn-default" onclick="return false;"
+                                style="width:63px;"><span>검색</span></button>
+                    </li>
+                </ul>
+            </article>
+        </div>
+
+        <div class="module-wrapper">
+            <div class="module-header ">
+                <ul class="list-inline pull-left">
+                    <h3 id="기본인적사항" data-name="기본인적사항" class="">기본인적사항</h3>
+                </ul>
+                <ul class="list-inline pull-right">
+                </ul>
+            </div>
+            <table id="detailArea" class="table-detail ">
+                <caption>area</caption>
+                <colgroup>
+                    <col width="252.0px">
+                    <col width="252.0px">
+                    <col width="252.0px">
+                    <col width="252.0px">
+                </colgroup>
+                <tbody>
+                <tr>
+                    <th class="txt-right" style="height:30px;">
+                        <span id="label4" data-name="한글성명" class="">한글성명</span>
+                    </th>
+                    <td class="txt-left" style="">
+                        <input type="text" id="한글성명" name="한글성명" class="form-control" style="width:80px;" value="">
+                    </td>
+                    <th class="txt-right" style="height:30px;">
+                        <span id="label5" data-name="영문성명" class="">영문성명</span>
+                    </th>
+                    <td class="txt-left" style="">
+                        <input type="text" id="영문성명" name="영문성명" class="form-control" style="width:80px;" value="">
+                    </td>
+                </tr>
+                <tr>
+                    <th class="txt-right" style="height:30px;">
+                        <span id="label6" data-name="생년월일" class="">생년월일</span>
+                    </th>
+                    <td class="txt-left" style="">
+                        <div class="datepicker datepicker-single">
+                            <i></i>
+                            <input type="text" id="생년월일" name="생년월일" class="form-control" style="width:242px;" value="">
+                        </div>
+                    </td>
+                    <th class="txt-right" style="height:30px;">
+                        <span id="label7" data-name="성별" class="">성별</span>
+                    </th>
+                    <td class="txt-left" style="">
+                        <ul class="list-inline">
+                            <li>
+                                <span id="성별1" data-name="성별" class="">남</span>
+                            </li>
+                            <li>
+                                <div class="input-radio" id="성별2">
+                                    <label><input type="radio" id="radioitem1" name="성별" class="form-control"
+                                                  value="radio0" checked><span></span></label>
+                                </div>
+                            </li>
+                            <li>
+                                <span id="성별3" data-name="성별" class="">여</span>
+                            </li>
+                            <li>
+                                <div class="input-radio" id="성별4">
+                                    <label><input type="radio" id="radioitem2" name="성별" class="form-control"
+                                                  value="radio0" checked><span></span></label>
+                                </div>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="txt-right" style="height:30px;">
+                        <span id="label8" data-name="국적" class="">국적</span>
+                    </th>
+                    <td class="txt-left" style="">
+                        <select id="국적" name="국적" class="form-control imgArrow" style="width:240px;">
+                            <option selected="selected">대한민국</option>
+                            <option>중국</option>
+                            <option>일본</option>
+                            <option>러시아</option>
+                            <option>미국</option>
+                            <option>대만</option>
+                        </select>
+                    </td>
+                    <th class="txt-right" style="height:30px;">
+                        <span id="label9" data-name="이메일" class="">이메일</span>
+                    </th>
+                    <td class="txt-left" style="">
+                        <ul class="list-inline">
+                            <li>
+                                <input type="text" id="이메일" name="이메일" class="form-control" style="width:58px;"
+                                       value="">
+                            </li>
+                            <li>
+                                <span id="이메일1" data-name="이메일" class="">@</span>
+                            </li>
+                            <li>
+                                <input type="text" id="이메일2" name="이메일" class="form-control" style="width:58px;"
+                                       value="">
+                            </li>
+                            <li>
+                                <select id="이메일3" name="이메일" class="form-control imgArrow" style="width:58px;">
+                                    <option selected="selected">naver.com</option>
+                                    <option>wilus.com</option>
+                                </select>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="txt-right" style="height:30px;">
+                        <span id="label10" data-name="주소" class="">주소</span>
+                    </th>
+                    <td colspan="3" class="txt-left" style="">
+                        <input type="text" id="주소" name="주소" class="form-control" style="width:377px;" value="">
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <div class="btn-block">
+                <ul class="list-inline pull-right">
+                    <li>
+                        <button id="button1" name="btn" class="btn btn-default" onclick="return false;"><span>btn</span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="module-wrapper">
+            <div class="module-header ">
+                <ul class="list-inline pull-left">
+                    <h3 id="사원정보" data-name="사원정보" class="">사원정보</h3>
+                </ul>
+                <ul class="list-inline pull-right">
+                </ul>
+            </div>
+            <table id="listArea" class="table-list ">
+                <caption>area</caption>
+                <colgroup>
+                    <col width="60.0px">
+                    <col width="157.0px">
+                    <col width="157.0px">
+                    <col width="157.0px">
+                    <col width="157.0px">
+                    <col width="157.0px">
+                    <col width="161.0px">
+                </colgroup>
+                <thead>
+                <tr>
+                    <th style="text-align: center; height:30px;" class="">
+                        <span id="label11" data-name="선택" class="">선택</span>
+                    </th>
+                    <th style="text-align: center; height:30px;" class="">
+                        <span id="label12" data-name="사원번호" class="">사원번호</span>
+                    </th>
+                    <th style="text-align: center; height:30px;" class="">
+                        <span id="label13" data-name="사원명" class="">사원명</span>
+                    </th>
+                    <th style="text-align: center; height:30px;" class="">
+                        <span id="label14" data-name="직급" class="">직급</span>
+                    </th>
+                    <th style="text-align: center; height:30px;" class="">
+                        <span id="label15" data-name="기술등급" class="">기술등급</span>
+                    </th>
+                    <th style="text-align: center; height:30px;" class="">
+                        <span id="label16" data-name="이메일" class="">이메일</span>
+                    </th>
+                    <th style="text-align: center; height:30px;" class="">
+                        <span id="label17" data-name="생년월일" class="">생년월일</span>
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td class="txt-center" style="">
+                        <div class="input-checkbox" id="chk">
+                            <label>
+                                <input type="checkbox" id="checkboxitem1" name="chk" class="form-control"
+                                          value="checkbox"><span style="height:20px;"></span></label>
+                        </div>
+                    </td>
+                    <td class="txt-center" style="">
+                        <span id="사원번호" data-name="사원번호" class="">Default</span>
+                    </td>
+                    <td class="txt-center" style="">
+                        <span id="사원명" data-name="사원명" class="">Default</span>
+                    </td>
+                    <td class="txt-center" style="">
+                        <select id="직급" name="직급" class="form-control imgArrow" style="width:80px;">
+                            <option selected="selected">전체</option>
+                        </select>
+                    </td>
+                    <td class="txt-center" style="">
+                        <select id="기술등급" name="기술등급" class="form-control imgArrow" style="width:80px;">
+                            <option selected="selected">전체</option>
+                        </select>
+                    </td>
+                    <td class="txt-center" style="">
+                        <ul class="list-inline">
+                            <li>
+                                <input type="text" id="이메일4" name="이메일" class="form-control" style="width:43px;"
+                                       value="">
+                            </li>
+                            <li>
+                                <span id="이메일5" data-name="이메일" class="">@</span>
+                            </li>
+                            <li>
+                                <input type="text" id="이메일6" name="이메일" class="form-control" style="width:43px;"
+                                       value="">
+                            </li>
+                        </ul>
+                    </td>
+                    <td class="txt-center" style="">
+                        <div class="datepicker datepicker-single">
+                            <i></i>
+                            <input type="text" id="생년월일2" name="생년월일" class="form-control" style="width:100px;"
+                                   value="">
+                        </div>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="txt-center" style="">
+                        <div class="input-checkbox" id="chk1">
+                            <label><input type="checkbox" id="checkboxitem2" name="chk1" class="form-control"
+                                          value="checkbox"><span style="height:20px;"></span></label>
+                        </div>
+                    </td>
+                    <td class="txt-center" style="">
+                        <span id="사원번호1" data-name="사원번호1" class="">Default</span>
+                    </td>
+                    <td class="txt-center" style="">
+                        <span id="사원명1" data-name="사원명1" class="">Default</span>
+                    </td>
+                    <td class="txt-center" style="">
+                        <select id="직급1" name="직급1" class="form-control imgArrow" style="width:80px;">
+                            <option selected="selected">전체</option>
+                        </select>
+                    </td>
+                    <td class="txt-center" style="">
+                        <select id="기술등급1" name="기술등급1" class="form-control imgArrow" style="width:80px;">
+                            <option selected="selected">전체</option>
+                        </select>
+                    </td>
+                    <td class="txt-center" style="">
+                        <ul class="list-inline">
+                            <li>
+                                <input type="text" id="이메일7" name="이메일1" class="form-control" style="width:43px;"
+                                       value="">
+                            </li>
+                            <li>
+                                <span id="이메일8" data-name="이메일1" class="">@</span>
+                            </li>
+                            <li>
+                                <input type="text" id="이메일9" name="이메일1" class="form-control" style="width:43px;"
+                                       value="">
+                            </li>
+                        </ul>
+                    </td>
+                    <td class="txt-center" style="">
+                        <div class="datepicker datepicker-single">
+                            <i></i>
+                            <input type="text" id="생년월일3" name="생년월일1" class="form-control" style="width:100px;"
+                                   value="">
+                        </div>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="txt-center" style="">
+                        <div class="input-checkbox" id="chk2">
+                            <label><input type="checkbox" id="checkboxitem3" name="chk2" class="form-control"
+                                          value="checkbox"><span style="height:20px;"></span></label>
+                        </div>
+                    </td>
+                    <td class="txt-center" style="">
+                        <span id="사원번호2" data-name="사원번호2" class="">Default</span>
+                    </td>
+                    <td class="txt-center" style="">
+                        <span id="사원명2" data-name="사원명2" class="">Default</span>
+                    </td>
+                    <td class="txt-center" style="">
+                        <select id="직급2" name="직급2" class="form-control imgArrow" style="width:80px;">
+                            <option selected="selected">전체</option>
+                        </select>
+                    </td>
+                    <td class="txt-center" style="">
+                        <select id="기술등급2" name="기술등급2" class="form-control imgArrow" style="width:80px;">
+                            <option selected="selected">전체</option>
+                        </select>
+                    </td>
+                    <td class="txt-center" style="">
+                        <ul class="list-inline">
+                            <li>
+                                <input type="text" id="이메일10" name="이메일2" class="form-control" style="width:43px;"
+                                       value="">
+                            </li>
+                            <li>
+                                <span id="이메일11" data-name="이메일2" class="">@</span>
+                            </li>
+                            <li>
+                                <input type="text" id="이메일12" name="이메일2" class="form-control" style="width:43px;"
+                                       value="">
+                            </li>
+                        </ul>
+                    </td>
+                    <td class="txt-center" style="">
+                        <div class="datepicker datepicker-single">
+                            <i></i>
+                            <input type="text" id="생년월일4" name="생년월일2" class="form-control" style="width:100px;"
+                                   value="">
+                        </div>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="txt-center" style="">
+                        <div class="input-checkbox" id="chk3">
+                            <label><input type="checkbox" id="checkboxitem4" name="chk3" class="form-control"
+                                          value="checkbox"><span style="height:20px;"></span></label>
+                        </div>
+                    </td>
+                    <td class="txt-center" style="">
+                        <span id="사원번호3" data-name="사원번호3" class="">Default</span>
+                    </td>
+                    <td class="txt-center" style="">
+                        <span id="사원명3" data-name="사원명3" class="">Default</span>
+                    </td>
+                    <td class="txt-center" style="">
+                        <select id="직급3" name="직급3" class="form-control imgArrow" style="width:80px;">
+                            <option selected="selected">전체</option>
+                        </select>
+                    </td>
+                    <td class="txt-center" style="">
+                        <select id="기술등급3" name="기술등급3" class="form-control imgArrow" style="width:80px;">
+                            <option selected="selected">전체</option>
+                        </select>
+                    </td>
+                    <td class="txt-center" style="">
+                        <ul class="list-inline">
+                            <li>
+                                <input type="text" id="이메일13" name="이메일3" class="form-control" style="width:43px;"
+                                       value="">
+                            </li>
+                            <li>
+                                <span id="이메일14" data-name="이메일3" class="">@</span>
+                            </li>
+                            <li>
+                                <input type="text" id="이메일15" name="이메일3" class="form-control" style="width:43px;"
+                                       value="">
+                            </li>
+                        </ul>
+                    </td>
+                    <td class="txt-center" style="">
+                        <div class="datepicker datepicker-single">
+                            <i></i>
+                            <input type="text" id="생년월일5" name="생년월일3" class="form-control" style="width:100px;"
+                                   value="">
+                        </div>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="txt-center" style="">
+                        <div class="input-checkbox" id="chk4">
+                            <label><input type="checkbox" id="checkboxitem5" name="chk4" class="form-control"
+                                          value="checkbox"><span style="height:20px;"></span></label>
+                        </div>
+                    </td>
+                    <td class="txt-center" style="">
+                        <span id="사원번호4" data-name="사원번호4" class="">Default</span>
+                    </td>
+                    <td class="txt-center" style="">
+                        <span id="사원명4" data-name="사원명4" class="">Default</span>
+                    </td>
+                    <td class="txt-center" style="">
+                        <select id="직급4" name="직급4" class="form-control imgArrow" style="width:80px;">
+                            <option selected="selected">전체</option>
+                        </select>
+                    </td>
+                    <td class="txt-center" style="">
+                        <select id="기술등급4" name="기술등급4" class="form-control imgArrow" style="width:80px;">
+                            <option selected="selected">전체</option>
+                        </select>
+                    </td>
+                    <td class="txt-center" style="">
+                        <ul class="list-inline">
+                            <li>
+                                <input type="text" id="이메일16" name="이메일4" class="form-control" style="width:43px;"
+                                       value="">
+                            </li>
+                            <li>
+                                <span id="이메일17" data-name="이메일4" class="">@</span>
+                            </li>
+                            <li>
+                                <input type="text" id="이메일18" name="이메일4" class="form-control" style="width:43px;"
+                                       value="">
+                            </li>
+                        </ul>
+                    </td>
+                    <td class="txt-center" style="">
+                        <div class="datepicker datepicker-single">
+                            <i></i>
+                            <input type="text" id="생년월일6" name="생년월일4" class="form-control" style="width:100px;"
+                                   value="">
+                        </div>
+
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <div class="btn-block">
+                <ul class="list-inline pull-right">
+                    <li>
+                        <button id="button2" name="저장" class="btn btn-default" onclick="return false;"><span>저장</span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!-- //page-content end -->
+</div>
+<!-- //wrapper end -->
+<!-- modal start -->
+<!-- //modal end -->
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../addon/jquery/3.1.1/js/jquery-3.1.1.min.js"></script>
+<script src="../addon/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="../addon/dropzone/4.0/js/dropzone.js"></script>
+<script src="../eap/js/dropzone_override.js"></script>
+<script src="../addon/select2/4.0.3/js/select2.min.js"></script>
+<script src="../addon/moment/2.17.0/moment.min.js"></script>
+<script src="../addon/daterangepicker/2.1.24/js/daterangepicker.js"></script>
+<script src="../js/daterangepicker_override.js"></script>
+<script src="../eap/js/LGCNS_js_common.js"></script>
+<script src="../addon/capture/es6-promise.auto.min.js"></script>
+<script src="../addon/capture/html2canvas.min.js"></script>
+<script src="../js/jquery.validate-1.19.1.min.js"></script>
+<script>
+    $(function () {
+
+        $.validator.addMethod('pattern', function (value, element, param) {
+            var pattern = $(element).attr('pattern');
+
+            if (!pattern) {
+                return true;
+            }
+            if (value == "") return true;
+
+            return value.match(pattern);
+        });
+
+        $.validator.addMethod('min', function (value, element, param) {
+            var minVal = $(element).attr('min');
+            var nVal = value;
+
+            if (nVal == "") return true;
+
+            if ($(element).attr("type") == "date") {
+                nVal = value.replace(/[^0-9]/g, '');
+            }
+            if (parseInt(nVal) >= parseInt(minVal)) return true;
+            return false;
+        });
+
+        $.validator.addMethod('max', function (value, element, param) {
+            var maxVal = $(element).attr('max');
+            var nVal = value;
+
+            if (nVal == "") return true;
+
+            if ($(element).attr("type") == "date") {
+                nVal = value.replace(/[^0-9]/g, '');
+            }
+            if (parseInt(nVal) <= parseInt(maxVal)) return true;
+            return false;
+        });
+
+        $.extend($.validator.messages, {
+            required: "This is required."
+            , email: "Wrong E-Mail."
+            , url: "Wrong URL."
+            , date: "Wrong date."
+            , number: "Wrong number."
+            , maxlength: $.validator.format("Max length is {0}.")
+            , pattern: "Please enter according to the format."
+        });
+
+        // for ie Array.prototype.includes
+        if (!Array.prototype.includes) {
+            Array.prototype.includes = function () {
+                'use strict';
+                return Array.prototype.indexOf.apply(this, arguments) !== -1;
+            };
+        }
+
+        var cnsdates = [
+            '2016.12.07', '2016.12.20', '2016.12.21', '2017.01.25'
+        ];
+
+        var dateFormat = 'YYYY.MM.DD';
+
+        function isCnsDate(date) {
+            if (cnsdates.includes(date.format(dateFormat))) {
+                return ['holiday'];
+            }
+
+            // 12일간 시스템을 닫는 등 그런 예로 못고르게 할 때
+            var dif = date.diff('20170101', 'days');
+            if (0 <= dif && dif < 12) {
+                return ['disabled'];
+            }
+        }
+
+        var drpLocale = {
+            format: dateFormat,
+            monthFormat: 'YYYY.MM',
+            separator: ' ~ ',
+            applyLabel: '확인',
+            cancelLabel: '취소',
+            customRangeLabel: "직접 입력",
+            daysOfWeek: ['일', '월', '화', '수', '목', '금', '토'],
+            monthNames: ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12']
+        };
+
+        var 생년월일Date = $('#생년월일');
+
+        생년월일Date.daterangepicker({
+            autoUpdateInput: false,
+            singleDatePicker: true,
+            isCustomDate: isCnsDate,
+            locale: drpLocale
+        });
+
+        생년월일Date.on('apply.daterangepicker', function (ev, picker) {
+            $(this).val(picker.startDate.format('YYYY.MM.DD'));
+        });
+
+        생년월일Date.on('cancel.daterangepicker', function (ev, picker) {
+            $(this).val('');
+        });
+
+        var 생년월일2Date = $('#생년월일2');
+
+        생년월일2Date.daterangepicker({
+            autoUpdateInput: false,
+            singleDatePicker: true,
+            isCustomDate: isCnsDate,
+            locale: drpLocale
+        });
+
+        생년월일2Date.on('apply.daterangepicker', function (ev, picker) {
+            $(this).val(picker.startDate.format('YYYY.MM.DD'));
+        });
+
+        생년월일2Date.on('cancel.daterangepicker', function (ev, picker) {
+            $(this).val('');
+        });
+
+        var 생년월일3Date = $('#생년월일3');
+
+        생년월일3Date.daterangepicker({
+            autoUpdateInput: false,
+            singleDatePicker: true,
+            isCustomDate: isCnsDate,
+            locale: drpLocale
+        });
+
+        생년월일3Date.on('apply.daterangepicker', function (ev, picker) {
+            $(this).val(picker.startDate.format('YYYY.MM.DD'));
+        });
+
+        생년월일3Date.on('cancel.daterangepicker', function (ev, picker) {
+            $(this).val('');
+        });
+
+        var 생년월일4Date = $('#생년월일4');
+
+        생년월일4Date.daterangepicker({
+            autoUpdateInput: false,
+            singleDatePicker: true,
+            isCustomDate: isCnsDate,
+            locale: drpLocale
+        });
+
+        생년월일4Date.on('apply.daterangepicker', function (ev, picker) {
+            $(this).val(picker.startDate.format('YYYY.MM.DD'));
+        });
+
+        생년월일4Date.on('cancel.daterangepicker', function (ev, picker) {
+            $(this).val('');
+        });
+
+        var 생년월일5Date = $('#생년월일5');
+
+        생년월일5Date.daterangepicker({
+            autoUpdateInput: false,
+            singleDatePicker: true,
+            isCustomDate: isCnsDate,
+            locale: drpLocale
+        });
+
+        생년월일5Date.on('apply.daterangepicker', function (ev, picker) {
+            $(this).val(picker.startDate.format('YYYY.MM.DD'));
+        });
+
+        생년월일5Date.on('cancel.daterangepicker', function (ev, picker) {
+            $(this).val('');
+        });
+
+        var 생년월일6Date = $('#생년월일6');
+
+        생년월일6Date.daterangepicker({
+            autoUpdateInput: false,
+            singleDatePicker: true,
+            isCustomDate: isCnsDate,
+            locale: drpLocale
+        });
+
+        생년월일6Date.on('apply.daterangepicker', function (ev, picker) {
+            $(this).val(picker.startDate.format('YYYY.MM.DD'));
+        });
+
+        생년월일6Date.on('cancel.daterangepicker', function (ev, picker) {
+            $(this).val('');
+        });
+
+        var tab = $('.accordion > li'), info = $('.currsec');
+
+        var current = -1;
+        tab.click(function (e) {
+            var t = e.currentTarget;
+            var current = tab.index(t);
+            if ($(t).attr('class') != undefined && $(t).attr('class').indexOf("on") > -1) {
+                $(t).removeClass('on');
+                info.eq(current).hide();
+            } else {
+                $(t).addClass('on');
+                info.eq(current).fadeIn();
+            }
+        });
+        $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+            $('.shuttle-button').each(function () {
+                var sleft = $(this).prev('.shuttle-left').height();
+                var jtree = $(this).prev('.shuttle-left').find('.jstree').outerHeight(true);
+                var slist = $(this).prev('.shuttle-left').find('.shuttle-list').outerHeight(true);
+                var table = $(this).prev('.shuttle-left').find('table').outerHeight(true);
+                var bblock = $(this).prev('.shuttle-left').find('.btn-block').outerHeight(true);
+                var bblock = (bblock === undefined) ? 0 : bblock;
+                $(this).css('height', jtree);
+                $(this).css('margin-top', sleft - jtree - bblock);
+                $(this).css('height', slist);
+                $(this).css('margin-top', sleft - slist - bblock);
+                $(this).css('height', table);
+                $(this).css('margin-top', sleft - table - bblock);
+            });
+        });
+
+        $('.shuttle-button').each(function () {
+            var sleft = $(this).prev('.shuttle-left').height();
+            var jtree = $(this).prev('.shuttle-left').find('.jstree').outerHeight(true);
+            var slist = $(this).prev('.shuttle-left').find('.shuttle-list').outerHeight(true);
+            var table = $(this).prev('.shuttle-left').find('table').outerHeight(true);
+            var bblock = $(this).prev('.shuttle-left').find('.btn-block').outerHeight(true);
+            var bblock = (bblock === undefined) ? 0 : bblock;
+            $(this).css('height', jtree);
+            $(this).css('margin-top', sleft - jtree - bblock);
+            $(this).css('height', slist);
+            $(this).css('margin-top', sleft - slist - bblock);
+            $(this).css('height', table);
+            $(this).css('margin-top', sleft - table - bblock);
+        });
+
+        /*******************************************************************************
+         * Event명 : Page Loading
+         * Event기능설명 :
+         * Event종류 : onload
+         * Input Data :
+         * Output Data :
+         * URI :
+         * Control ID :
+         *******************************************************************************/
+
+    });
+
+    /*******************************************************************************
+     * Event명 : 커스텀검색스크립트
+     * Event기능설명 : 커스텀검색스크립트
+     * Event종류 : onclick
+     * Input Data :
+     * Output Data :
+     * URI :
+     * Control ID : button
+     *******************************************************************************/
+    $('#button').on('click', function (e) {
+    });
+
+    /*******************************************************************************
+     * Event명 : 커스텀검색스크립트
+     * Event기능설명 : 커스텀검색스크립트
+     * Event종류 : onclick
+     * Input Data :
+     * Output Data :
+     * URI :
+     * Control ID : buttonSearch
+     *******************************************************************************/
+    $('#buttonSearch').on('click', function (e) {
+
+        fetch('https://jsonplaceholder.typicode.com/users')
+            .then(response => {
+                // 응답을 JSON으로 변환
+                if (response.ok) {
+                    return response.json();
+                }
+                throw new Error('Network response was not ok.');
+            })
+            .then(data => {
+                // JSON 데이터 처리
+                console.log(data);
+            })
+            .catch(error => {
+                // 에러 처리
+                console.error('There was a problem with your fetch operation:', error);
+            });
+
+    });
+</script>
+<script>
+</script>
+</body>
+</html>

@@ -74,7 +74,7 @@ function createSearchFormDOM(frm) {
             newElementHTML += `
                 <tr>
                 <th scope="row">${index}</th>
-                <td><input type="text" class="form-control" value="${data.id}"></td>
+                <td><input type="text" class="form-control" name="${data.label}" value="${data.id}" onchange="searchFormChangeEvent(this)"></td>
                 <td>${data.label}</td>
                 <td><select class="form-control">
             `
@@ -327,14 +327,23 @@ function deleteThisRow(el, type) {
     }
 }
 
+function searchFormChangeEvent(inp) {
+    console.log('formObj', formObj)
+    let label = inp.name
+    let id = inp.id
+    // formObj.detail.forEach((item) => {
+    //     if ('label' in item) {
+    //         item.label = 'str';
+    //     }
+    // });
+    console.log('formObj after', formObj)
+}
+
 function convertSvelteCode() {
     if (document.querySelector('#page-title').value === '') {
         alert('프로그램명을 기입해주세요.')
         return false;
     }
-
-    let searchFormEl = document.querySelector('form[name=searchForm]')
-
 
     let svelteCode = `<script>
         // @ts-nocheck
