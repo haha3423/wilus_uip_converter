@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UIP Converter</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+            integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+            crossorigin="anonymous"></script>
+    <script src="js/converter.js"></script>
+    <link rel="stylesheet" href="js/lib/codemirror/codemirror.css">
+    <link rel="stylesheet" href="js/lib/codemirror/theme/darcula.css">
+    <script src="js/lib/codemirror/codemirror.js"></script>
+    <script src="js/lib/codemirror/mode/javascript/javascript.js"></script>
+</head>
+<style>
+    body {
+        background: #e2e2e2;
+    }
+
+    label {
+        font-weight: 600;
+    }
+
+    .text-right {
+        text-align: right;
+    }
+
+    .btn-block {
+        width: 100%;
+    }
+
+    .CodeMirror {
+        font-size: 14px;
+        font-family: Arial, sans-serif;
+        border-radius: 10px;
+        height: auto;
+    }
+
+    .table {
+        font-size: 14px;
+    }
+</style>
+<body>
+
+<div class="container-fluid mt-5 mb-5">
+    <div class="row">
+
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title">화면정보 및 UIP 파일 업로드</h5>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">※ Search Form과 List Table만 변환이 가능합니다. 이용에 참고 부탁드립니다.</p>
+                    <div class="mb-3">
+                        <label for="page-title" class="form-label">프로그램명 (필수)</label>
+                        <input type="text" class="form-control" id="page-title">
+                    </div>
+                    <div class="mb-3">
+                        <label for="uip-file" class="form-label">UIP 산출물 파일을 업로드하세요. (HTML)</label>
+                        <input type="file" class="form-control" id="uip-file" accept=".html">
+                    </div>
+                    <div class="mb-3" id="btn-area-convert" style="display: none">
+                        <button class="btn btn-success btn-block" role="button" onclick="convertSvelteCode()">코드 변환
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Search Form -->
+            <div class="card mt-4" id="search-form" style="display: none;">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h5 class="card-title" id="search-form-title"></h5>
+                    <!--                    <button class="btn btn-primary">필드 추가</button>-->
+                </div>
+                <div class="card-body">
+                    <div id="search-form-detail"></div>
+                </div>
+            </div>
+
+            <!-- List Table -->
+            <div class="card mt-4" id="list-table" style="display: none;">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h5 class="card-title" id="list-table-title">그리드 테이블</h5>
+                    <!--                    <button class="btn btn-primary">컬럼 추가</button>-->
+                </div>
+                <div class="card-body">
+                    <div id="list-table-detail"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h5 class="card-title">변환된 Svelte Code</h5>
+                    <button class="btn btn-success" role="button" onclick="copyEditorCode()">코드 복사하기</button>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">우측에 UIP 산출물 파일(html)을 업로드하고 코드변환 버튼을 클릭하세요.</p>
+                    <p class="card-text">필요 시 스크립트 파일을 아래 에디터에 작성하세요.</p>
+                </div>
+
+                <div class="card-body">
+                    <textarea id="codemirror-textarea"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Script -->
+<script>
+    const codeeditor = document.querySelector('#codemirror-textarea')
+    let editor = CodeMirror.fromTextArea(codeeditor, {
+        lineNumbers: true,  //왼쪽 라인넘버 표기
+        // lineWrapping: true, //줄바꿈. 음.. break-word;
+        theme: "darcula",
+        mode: 'text/javascript',
+        val: codeeditor.value,
+        viewportMargin: Infinity
+    });
+
+    function copyEditorCode() {
+        const code = editor.getValue()
+        navigator.clipboard.writeText(code)
+            .then(() => {
+                alert('복사되었습니다.')
+            }).catch(() => {
+              alert('에러가 발생했습니다.')
+        })
+    }
+</script>
+<script src="js/converter.js"></script>
+</body>
+</html>
